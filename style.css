@@ -125,7 +125,3 @@ main {
     background: #edc9e9;
 }
 
-.not-read:hover {
-    background: var(--btn-color-event);
-    transition: 200ms;
-}
