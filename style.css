@@ -12,6 +12,8 @@ body {
     --btn-color-event: #CCD5AE;
 }
 
+/*HEADER*/
+
 header {
     display: grid;
     justify-items: center;
@@ -40,7 +42,7 @@ header button:hover {
     transition: 200ms;
 }
 
-/*MAIN STYLES*/
+/*MAIN*/
 
 main {
     display: grid;
@@ -75,16 +77,44 @@ main {
     gap: 16px;
 }
 
+/*CARD*/
+
+.info {
+    font-size: 1em;
+}
+
 .card {
     background: var(--h-color);
     font-size: 1.5em;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     justify-items: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     font-weight: 600;
     border-radius: 10px;
     padding: 16px;
+    gap: 4px;
+}
+
+.card button {
+    font-size: 0.9em;
+    width: 13em;
+    border-radius: 10px;
+    border: none;
+    height: 3em;
+}
+
+.card button:hover {
+    background: var(--btn-color-event);
+    transition: 200ms;
+}
+
+.read {
+    background: var(--btn-color);
+}
+
+.remove {
+    background: var(--main-color);
 }
