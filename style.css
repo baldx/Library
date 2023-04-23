@@ -74,7 +74,7 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 16px;
+    gap: 32px;
 }
 
 /*CARD*/
@@ -117,4 +117,15 @@ main {
 
 .remove {
     background: var(--main-color);
+}
+
+/*NOT READ*/
+
+.not-read {
+    background: #edc9e9;
+}
+
+.not-read:hover {
+    background: var(--btn-color-event);
+    transition: 200ms;
 }
