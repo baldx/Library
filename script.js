@@ -1,7 +1,18 @@
-const read = document.querySelector(".read");
-const remove = document.querySelector(".remove");
+let myLibrary = [];
 
-read.addEventListener("click", () => {
-    read.classList.toggle("read");
-    read.classList.toggle("not-read");
-});
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+}
+
+function addBookToLibrary() {
+    const addBook = document.getElementById("add-book");
+
+    addBook.onclick = function() {
+        alert("test");
+    }
+}
+
+addBookToLibrary();
