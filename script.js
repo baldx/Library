@@ -16,3 +16,26 @@ function addBookToLibrary() {
 }
 
 addBookToLibrary();
+
+const readBtn = document.querySelectorAll(".read-btn");
+
+readBtn.forEach((element) => {
+    element.onclick = () => {
+        element.classList.toggle("read");
+        element.classList.toggle("not-read")
+    }
+});
+
+
+// document.querySelector(".read-btn").onclick = () => {
+
+//     const read = document.querySelector(".read");
+
+//     if (read.innerText = "Read") {
+//         read.innerText = "Not read";
+//     }
+//     else {
+//         read.innerText = "Read";
+//     }
+
+// }
