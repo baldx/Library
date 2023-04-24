@@ -22,7 +22,14 @@ const readBtn = document.querySelectorAll(".read-btn");
 readBtn.forEach((element) => {
     element.onclick = () => {
         element.classList.toggle("read");
-        element.classList.toggle("not-read")
+        element.classList.toggle("not-read");
+
+        if (element.classList.contains("not-read")) {
+            element.innerText = ("Not Read");
+        }
+        else {
+            element.innerText = ("Read");
+        }
     }
 });
 
@@ -31,11 +38,11 @@ readBtn.forEach((element) => {
 
 //     const read = document.querySelector(".read");
 
-//     if (read.innerText = "Read") {
-//         read.innerText = "Not read";
-//     }
-//     else {
-//         read.innerText = "Read";
-//     }
+//       if (read.innerText = "Read") {
+//          read.innerText = "Not read";
+//      }
+//      else {
+//          read.innerText = "Read";
+//      }
 
-// }
+//  }
