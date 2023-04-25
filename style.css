@@ -125,3 +125,15 @@ main {
     background: #edc9e9;
 }
 
+
+/*Book form*/
+
+.book-form form {
+    background-color: rgb(185, 32, 32);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 1em;
+    grid-template-rows: repeat(5, 1fr);
+    overflow: none;
+}
