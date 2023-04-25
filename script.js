@@ -33,16 +33,7 @@ readBtn.forEach((element) => {
     }
 });
 
+const removeBtn = document.querySelectorAll(".remove-btn");
+const shelf = document.querySelectorAll(".card-container");
 
-// document.querySelector(".read-btn").onclick = () => {
-
-//     const read = document.querySelector(".read");
-
-//       if (read.innerText = "Read") {
-//          read.innerText = "Not read";
-//      }
-//      else {
-//          read.innerText = "Read";
-//      }
-
-//  }
+/*add remove button event*/
