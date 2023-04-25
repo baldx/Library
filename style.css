@@ -129,11 +129,43 @@ main {
 /*Book form*/
 
 .book-form form {
-    background-color: rgb(185, 32, 32);
+    background-color: var(--btn-color);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    font-size: 1.5em;
+    border-radius: 15px;
     display: grid;
     grid-template-columns: 1fr;
     padding: 16px;
-    gap: 1em;
+    gap: 0.5em;
     grid-template-rows: repeat(5, 1fr);
-    overflow: none;
+}
+
+.book-form form input {
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.7em;
+    padding: 0.5em;
+}
+
+.book-form form button {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: var(--main-color);
+    padding: 0.5em;
+    font-size: inherit;
+}
+
+.book-form form button:active {
+    background-color: var(--btn-color-event);
+}
+
+.book-form form input[type="checkbox"] {
+    justify-self: start;
+}
+
+::placeholder {
+    font-style: italic;
 }
