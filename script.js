@@ -15,10 +15,10 @@ function addBookToLibrary() {
     addBook.onclick = function() {
         book.innerHTML = `<form>
         <label for="title">Book title:</label>
-        <input type="text" placeholder="Atomic Habits" id="title" name="title" required>
+        <input type="text" placeholder="Atomic Habits" id="title" name="title" maxLength="30" required>
 
         <label for="author">Author:</label>
-        <input type="text" placeholder="James Clear" id="author" name="author" required>
+        <input type="text" placeholder="James Clear" id="author" name="author" maxLength="30" required>
 
         <label for="pages">Pages:</label>
         <input type="number" placeholder="250 pages" id="pages" name="pages" min="0" required>
@@ -56,7 +56,6 @@ readBtn.forEach((element) => {
 });
 
 const removeBtn = document.querySelectorAll(".remove-btn");
-const shelf = document.querySelectorAll(".card-container");
 
 /*add remove button event*/
 
