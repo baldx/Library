@@ -25,8 +25,14 @@ function addBookToLibrary() {
 
         <label for="check">Have you read it?</label>
         <input type="checkbox" name="check" id="check">
-        <button type="submit">Submit book</button>
+        <button id="submit-btn" type="submit">Submit book</button>
     </form>`
+    const submitBtn = document.querySelector("#submit-btn");
+
+    submitBtn.addEventListener("click", () => {
+        alert(submitBtn.id);
+    });
+
     bookForm.appendChild(book);
     }
 }
@@ -53,3 +59,14 @@ const removeBtn = document.querySelectorAll(".remove-btn");
 const shelf = document.querySelectorAll(".card-container");
 
 /*add remove button event*/
+
+function removeBook() {
+    removeBtn.forEach(element => {
+        element.onclick = () => {
+            element.parentNode.remove(element.parentNode);
+        }
+    })
+}
+
+removeBook();
+
