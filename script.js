@@ -8,6 +8,20 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
+    const formTitle = document.querySelector("#title");
+    const formAuthor = document.querySelector("#author");
+    const formPages = document.querySelector("#pages");
+    const formRead = document.querySelector("#check");
+    let title = formTitle.value;
+    let author = formAuthor.value;
+    let pages = formPages;
+    let isRead = formRead;
+    let newBook = new Book(title, author, pages, isRead);
+    myLibrary.push(newBook);
+    bookForm();
+}
+
+function bookForm() {
     const addBook = document.getElementById("add-book");
     const bookForm = document.querySelector("#book-form");
     const book = document.querySelector("#book");
@@ -37,6 +51,7 @@ function addBookToLibrary() {
     }
 }
 
+bookForm();
 addBookToLibrary();
 
 const readBtn = document.querySelectorAll(".read-btn");
