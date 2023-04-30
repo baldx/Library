@@ -1,4 +1,11 @@
-let myLibrary = [];
+let myLibrary = [
+    {
+        title: "Atomic Habits",
+        author: "James Clear",
+        pages: "250",
+        read: false
+    }
+];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -8,17 +15,30 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-    const formTitle = document.querySelector("#title");
-    const formAuthor = document.querySelector("#author");
-    const formPages = document.querySelector("#pages");
-    const formRead = document.querySelector("#check");
-    let title = formTitle.value;
-    let author = formAuthor.value;
-    let pages = formPages;
-    let isRead = formRead;
-    let newBook = new Book(title, author, pages, isRead);
+    const titleInput = document.querySelector("#title");
+    const authorInput = document.querySelector("#author");
+    const pageInput = document.querySelector("#pages");
+    const readInput = document.querySelector("#check");
+    const submitBtn = document.querySelector("#submit-btn");
+    const libraryContainer = document.querySelector(".book-container");
+
+    let newBook = {
+        title: titleInput,
+        author: authorInput,
+        pages: pageInput,
+        isRead: readInput
+    }
+
+    newBook = new Book(titleInput, authorInput, pageInput, readInput);
     myLibrary.push(newBook);
     bookForm();
+
+    
+
+    submitBtn.addEventListener("click", () => {
+        
+    });
+
 }
 
 function bookForm() {
@@ -30,29 +50,21 @@ function bookForm() {
         book.innerHTML = `<form>
         <label for="title">Book title:</label>
         <input type="text" placeholder="Atomic Habits" id="title" name="title" maxLength="30" required>
-
         <label for="author">Author:</label>
         <input type="text" placeholder="James Clear" id="author" name="author" maxLength="30" required>
-
         <label for="pages">Pages:</label>
         <input type="number" placeholder="250 pages" id="pages" name="pages" min="0" required>
-
         <label for="check">Have you read it?</label>
         <input type="checkbox" name="check" id="check">
         <button id="submit-btn" type="submit">Submit book</button>
     </form>`
-    const submitBtn = document.querySelector("#submit-btn");
-
-    submitBtn.addEventListener("click", () => {
-        alert(submitBtn.id);
-    });
-
     bookForm.appendChild(book);
     }
 }
 
-bookForm();
+
 addBookToLibrary();
+
 
 const readBtn = document.querySelectorAll(".read-btn");
 
@@ -70,9 +82,11 @@ readBtn.forEach((element) => {
     }
 });
 
-const removeBtn = document.querySelectorAll(".remove-btn");
+
 
 /*add remove button event*/
+
+const removeBtn = document.querySelectorAll(".remove-btn");
 
 function removeBook() {
     removeBtn.forEach(element => {
@@ -83,4 +97,3 @@ function removeBook() {
 }
 
 removeBook();
-
