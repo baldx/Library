@@ -21,6 +21,9 @@ function addBookToLibrary() {
     const readInput = document.querySelector("#check");
     const submitBtn = document.querySelector("#submit-btn");
     const libraryContainer = document.querySelector(".book-container");
+    const addBook = document.getElementById("add-book");
+    const bookForm = document.querySelector("#book-form");
+    const book = document.querySelector("#book");
 
     let newBook = {
         title: titleInput,
@@ -31,20 +34,6 @@ function addBookToLibrary() {
 
     newBook = new Book(titleInput, authorInput, pageInput, readInput);
     myLibrary.push(newBook);
-    bookForm();
-
-    
-
-    submitBtn.addEventListener("click", () => {
-        
-    });
-
-}
-
-function bookForm() {
-    const addBook = document.getElementById("add-book");
-    const bookForm = document.querySelector("#book-form");
-    const book = document.querySelector("#book");
 
     addBook.onclick = function() {
         book.innerHTML = `<form>
@@ -60,7 +49,25 @@ function bookForm() {
     </form>`
     bookForm.appendChild(book);
     }
+
+
+        submitBtn.addEventListener("click", (element) => {
+            element.preventDefault();
+            book.innerHTML = ` 
+            <div class="card">
+                <div class="info" align="center">
+                    <div class="title">${titleInput}</div>
+                    <div class="author">${authorInput}</div>
+                    <div class="pages">${pageInput}</div>
+                </div>
+                <button class="read read-btn">Read</button>
+                <button class="remove remove-btn" data-set="something">Remove</button>
+            </div>`
+        }, false);
+
 }
+
+
 
 
 addBookToLibrary();
